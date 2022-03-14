@@ -1,13 +1,7 @@
 import { useState } from "react";
 import Button from "./Button";
 
-const NoteBoard = ({ notes }) => {
-  const updateNote = (note) => {};
-
-  const deleteNote = (id) => {
-    console.log(id);
-  };
-
+const NoteBoard = ({ notes, deleteNote, updateNote }) => {
   return (
     <>
       <main className="note_board">

@@ -1,0 +1,28 @@
+header {
+  padding: 1rem;
+  background: rgb(245, 59, 59);
+}
+
+.header_container {
+  max-width: 1000px;
+  width: 95%;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+header h3 {
+  margin: 0;
+  font-size: 1.5rem;
+}
+
+.change_elements_container {
+  display: flex;
+}
+
+.header_button {
+  font-size: 1rem;
+  margin: 0 0.5rem;
+  padding: 0.5rem;
+}
