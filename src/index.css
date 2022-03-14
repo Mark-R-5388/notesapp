@@ -11,36 +11,28 @@ html {
   margin: 0;
   padding: 0;
   font-family: "Montserrat", sans-serif;
+  box-sizing: border-box;
 }
 
-#app {
-  position: relative;
-}
-
-.note_board {
-  margin: 2rem auto;
-  max-width: 1200px;
+.main_container {
+  max-width: 1000px;
   width: 95%;
+  margin: 0 auto;
   display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  align-items: center;
+  flex-direction: column;
 }
 
-.note_container {
-  width: 10rem;
-  height: 10rem;
-  background: rgb(250, 227, 26);
-  margin-bottom: 1rem;
-  margin: 0 1rem 1rem;
+.add_note_button {
+  margin-top: 2rem;
+  padding: 1rem;
+  border: none;
+  font-size: 1.5rem;
 }
 
-.note_title {
-  font-size: 1rem;
-  margin: 0 0 0.5rem 0;
-}
-
-.note_text {
+.note_button {
+  border: none;
+  padding: 0.5rem;
   font-size: 0.75rem;
-  margin: 0 0 0.5rem 0;
+  margin-left: 0.25rem;
+  margin-right: 0.25rem;
 }

@@ -1,5 +1,6 @@
 import { useState } from "react";
 import AddNoteModal from "./components/AddNoteModal";
+import BlankNotes from "./components/BlankNotes";
 import Header from "./components/Header";
 import NoteBoard from "./components/NoteBoard";
 import UpdateNoteModal from "./components/UpdateNoteModal";
@@ -46,38 +47,41 @@ function App() {
   return (
     <div className="App">
       <Header />
-      {!showModal && (
-        <>
-          <button
-            className="add_note_button"
-            onClick={() => setShowModal(true)}
-          >
-            Add Note
-          </button>
-          <NoteBoard
-            notes={notes}
-            updateNote={updateNote}
-            deleteNote={deleteNote}
+      <div className="main_container">
+        <button className="add_note_button" onClick={() => setShowModal(true)}>
+          Add Note
+        </button>
+        {/* with notes added */}
+        {!showModal && notes.length > 0 && (
+          <>
+            <NoteBoard
+              notes={notes}
+              updateNote={updateNote}
+              deleteNote={deleteNote}
+            />
+          </>
+        )}
+
+        {/* with no notes added */}
+        {!showModal && notes.length === 0 && <BlankNotes />}
+
+        {/* Update Note */}
+        {showUpdateModal && (
+          <UpdateNoteModal
+            noteToUpdate={noteToUpdate}
+            createUpdatedNote={createUpdatedNote}
           />
-        </>
-      )}
+        )}
 
-      {/* Update Note */}
-      {showUpdateModal && (
-        <UpdateNoteModal
-          noteToUpdate={noteToUpdate}
-          createUpdatedNote={createUpdatedNote}
-        />
-      )}
-
-      {/* Add New Note */}
-      {showModal && (
-        <AddNoteModal
-          createNewNote={createNewNote}
-          newNote={newNote}
-          setNewNote={setNewNote}
-        />
-      )}
+        {/* Add New Note */}
+        {showModal && (
+          <AddNoteModal
+            createNewNote={createNewNote}
+            newNote={newNote}
+            setNewNote={setNewNote}
+          />
+        )}
+      </div>
     </div>
   );
 }

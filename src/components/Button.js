@@ -1,5 +1,9 @@
 const Button = ({ buttonFunction, title }) => {
-  return <button onClick={buttonFunction}>{title}</button>;
+  return (
+    <button className="note_button" onClick={buttonFunction}>
+      {title}
+    </button>
+  );
 };
 
 export default Button;

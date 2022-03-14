@@ -1,0 +1,40 @@
+.note_board {
+  margin-top: 2rem;
+  border: 8px solid grey;
+  padding: 1rem;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}
+
+.note_container {
+  padding: 0.5rem;
+  width: 10rem;
+  min-height: 10rem;
+  background: rgb(250, 227, 26);
+  margin-bottom: 1rem;
+  margin: 0.5rem 1rem;
+  box-shadow: 2px 4px 4px rgba(0, 0, 0, 0.5);
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.note_title {
+  width: 95%;
+  font-size: 1rem;
+  margin: 0 0 0.5rem 0;
+}
+
+.note_text {
+  max-width: 95%;
+  font-size: 0.75rem;
+  margin: 0 0 0.5rem 0;
+}
+
+.note_buttons_container {
+  display: flex;
+}
