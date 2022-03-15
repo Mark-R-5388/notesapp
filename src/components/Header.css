@@ -12,7 +12,21 @@ header {
   align-items: center;
 }
 
-header h3 {
+.header_logo_container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
+}
+
+.header_logo {
+  stroke: #fff;
+  fill: #fff;
+  font-size: 2rem;
+  margin-right: 0.5rem;
+}
+
+.header_logo_container h3 {
   margin: 0;
   font-size: 1.5rem;
 }

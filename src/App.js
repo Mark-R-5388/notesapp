@@ -11,15 +11,22 @@ function App() {
   const [noteToUpdate, setNoteToUpdate] = useState("");
   const [showModal, setShowModal] = useState(false);
   const [showUpdateModal, setShowUpdateModal] = useState(false);
+  const [showError, setShowError] = useState(true);
 
   const randomId = () => {
     return Math.floor(Math.random() * 10000);
   };
 
   const createNewNote = (title, text) => {
-    const newNote = { id: randomId(), title, text };
-    setNotes((prevList) => [...prevList, newNote]);
-    setShowModal(false);
+    if (title === "" || text === "") {
+      setShowError(true);
+      setShowModal(true);
+    }
+    if (title !== "" && text !== "") {
+      const newNote = { id: randomId(), title, text };
+      setNotes((prevList) => [...prevList, newNote]);
+      setShowModal(false);
+    }
   };
 
   const deleteNote = (id) => {
@@ -36,12 +43,17 @@ function App() {
   };
 
   const createUpdatedNote = (title, text) => {
-    let updateNote = { ...noteToUpdate, title: title, text: text };
-    const filteredNotes = notes.filter((note) => {
-      return note.id !== noteToUpdate.id;
-    });
-    setNotes([...filteredNotes, updateNote]);
-    setShowUpdateModal(false);
+    if (title !== "" && text !== "") {
+      let updateNote = { ...noteToUpdate, title: title, text: text };
+      const filteredNotes = notes.filter((note) => {
+        return note.id !== noteToUpdate.id;
+      });
+      setNotes([...filteredNotes, updateNote]);
+      setShowUpdateModal(false);
+    } else {
+      setShowError(true);
+      setShowUpdateModal(true);
+    }
   };
 
   return (
@@ -70,6 +82,7 @@ function App() {
           <UpdateNoteModal
             noteToUpdate={noteToUpdate}
             createUpdatedNote={createUpdatedNote}
+            showError={showError}
           />
         )}
 
@@ -79,6 +92,7 @@ function App() {
             createNewNote={createNewNote}
             newNote={newNote}
             setNewNote={setNewNote}
+            showError={showError}
           />
         )}
       </div>

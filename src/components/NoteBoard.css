@@ -1,6 +1,5 @@
 .note_board {
   margin-top: 2rem;
-  border: 8px solid grey;
   padding: 1rem;
   display: flex;
   flex-wrap: wrap;
@@ -9,8 +8,8 @@
 }
 
 .note_container {
-  padding: 0.5rem;
-  width: 10rem;
+  padding: 0.75rem;
+  width: 12rem;
   min-height: 10rem;
   background: rgb(250, 227, 26);
   margin-bottom: 1rem;
@@ -19,22 +18,25 @@
   display: flex;
   flex-wrap: wrap;
   flex-direction: column;
-  justify-content: flex-start;
+
   align-items: center;
 }
 
 .note_title {
   width: 95%;
-  font-size: 1rem;
-  margin: 0 0 0.5rem 0;
+  font-size: 1.25rem;
+  margin: 0 0 0.75rem 0;
 }
 
 .note_text {
+  justify-self: flex-start;
   max-width: 95%;
-  font-size: 0.75rem;
+  font-size: 1rem;
+  letter-spacing: 1.6px;
   margin: 0 0 0.5rem 0;
 }
 
 .note_buttons_container {
   display: flex;
+  margin-top: auto;
 }

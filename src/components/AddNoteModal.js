@@ -1,13 +1,16 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import "./AddNoteModal.css";
 
-const AddNoteModal = ({ createNewNote, newNote, setNewNote }) => {
+const AddNoteModal = ({ createNewNote, showError }) => {
   const [noteTitle, setNoteTitle] = useState("");
   const [noteText, setNoteText] = useState("");
 
   return (
     <div className="modal_page">
       <div className="modal_container">
+        {showError && (
+          <p className="error_message">Please Enter A Value Below</p>
+        )}
         <label className="input_label" htmlFor="title">
           Note Title
         </label>
